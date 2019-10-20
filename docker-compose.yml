@@ -3,7 +3,7 @@ services:
   api:
     image: aurelianosza/express
     volumes:
-      - ./api_livros/:/usr/src/app
+      - ./service/:/usr/src/app
     ports:
       - 8080:8080
     networks:
