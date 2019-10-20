@@ -27,7 +27,7 @@ Exemplo de API simples de cadastro de livros
     >       * No terminal de comandos do git, digite o comando     `git clone https://github.com/aurelianosza/api-livros.git`   e espere o término do download do repositório.
         
   * Abra o terminal no diretório __service__ e execute o comando `npm install`, aguarde a instalação dos módulos da API.
-  3. Vá até o diretório raiz do projeto(pasta baixada a partir do diretório) e execute o comando `docker-compose up`, aguarde o download e início dos containeres.
+  * Vá até o diretório raiz do projeto(pasta baixada a partir do diretório) e execute o comando `docker-compose up`, aguarde o download e início dos containeres.
   * Importe a documentação da API.
    >    * Com a aplicação do insomnia aberta, clique na opção __Insomnia__ e selecione a opção __Import/Export__ .
    >    * Clique no botão __Import Data__ e selecione a opção __From File__.
