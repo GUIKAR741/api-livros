@@ -5,6 +5,7 @@ const bookController = require('./controllers/bookController');
 const chapterController = require("./controllers/chapterController");
 
 route.get('/books',         bookController.index);
+route.get('/books/paginate',bookController.paginate);
 route.get('/books/:id',     bookController.show);
 route.post('/books',        bookController.create);
 route.put('/books/:id',     bookController.update);

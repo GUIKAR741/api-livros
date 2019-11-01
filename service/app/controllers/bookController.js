@@ -1,18 +1,14 @@
 const book = require("../models/book");
 
-var index = function (req, res) {
-    book.find({
-            titulo: new RegExp(req.query.titulo, 'i'),
-            autor: new RegExp(req.query.autor, 'i')
-        }, '_id titulo ano_publicacao autor')
-        .skip(10 * req.query.page)
-        .limit(10)
-        .exec(function (err, books) {
-            if (err) {
-                res.json(err);
-            }
-            res.json(books);
-        });
+var index = async function (req, res) {
+    const livros = await book.find({}, '_id titulo ano_publicacao autor')
+    res.json(livros)
+}
+
+var paginate = async function (req, res) {
+    const { page = 1 } = req.query
+    const livros = await book.paginate({}, { select: { _id: 1, titulo: 1, ano_publicacao: 1, autor: 1 }, page, limit: 10 })
+    res.json(livros)
 }
 
 var show = function (req, res) {
@@ -86,6 +82,7 @@ var destroy = function (req, res) {
 
 module.exports = {
     index,
+    paginate,
     show,
     create,
     update,
