@@ -15,7 +15,7 @@ var show = function (req, res) {
     book.findById(req.params.id, '_id titulo ano_publicacao autor capitulos._id capitulos.nome').exec(function (err, book) {
         if (err) {
             res.status(400);
-            res.end(err);
+            res.end();
         } else if (book == null) {
             res.status(404);
             res.end();
